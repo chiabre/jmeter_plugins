@@ -74,9 +74,6 @@ jmeter-prometheus\
  && ${JMETER_BIN}/jmeter --version \
  && ${JMETER_BIN}/PluginsManagerCMD.sh status
 
-
-
-
 ENV PATH $PATH:$JMETER_BIN
 
 WORKDIR	/tmp/
