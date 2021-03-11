@@ -4,13 +4,9 @@ Docker image to run Apache JMeter test plan that:
 * embeds the top 30ish most used plugins from jmeter-plugins.org
 * [if the Prometheus Listener plugin is the test plan] expose the metrics on port 9270
 
-**Apache JMeter**
+**Apache JMeter**:an application designed to load test functional behavior and measure performance - https://jmeter.apache.org
 
-an application designed to load test functional behavior and measure performance - https://jmeter.apache.org
-
-**jmeter-plugins.org**
-
-a project that collects and provides a set of plugins for Apache JMeter - https://jmeter-plugins.org/
+**jmeter-plugins.org**: a project that collects and provides a set of plugins for Apache JMeter - https://jmeter-plugins.org/
 
 The **version number** of this images is composed of two version numbers
   * the first is the version of the Apache JMeter 
