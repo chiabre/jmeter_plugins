@@ -14,8 +14,9 @@ The **version number** of this images is composed of two version numbers
 
 `chiabre/jmeter_plugins`
 
-Find Images of this repo on [docker hub](https://hub.docker.com/repository/docker/chiabre/jmeter_plugnins)
-Find repo of this images on [github](https://github.com/chiabre/jmeter_plugnins)
+Images of this repo on [docker hub](https://hub.docker.com/repository/docker/chiabre/jmeter_plugins)
+
+Repo of this images on [github](https://github.com/chiabre/jmeter_plugins)
 
 ## Apache JMeter test execution
 
@@ -69,7 +70,7 @@ build.sh
 docker run --rm --name jmeter -i -v `pwd`:`\tmp` -w `\tmp` -p 9270:9270 chiabre/jmeter_plugins -t [YOUR_SCRIPT].jmx
 ```
 
-`[YOUR_SCRIPT].jmx` as to be present in the current path path, Additional JMeter or Promethues listern argument can be appended to the command.
+[YOUR_SCRIPT].jmx as to be present in the current path path, Additional JMeter or Promethues listern argument can be appended to the command.
 
 To expose metrics via the Prometheus exporter add `-p 9270:9270`, metrics will be published at:
 
