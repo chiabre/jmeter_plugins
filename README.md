@@ -14,9 +14,8 @@ The **version number** of this images is composed of two version numbers
 
 `chiabre/jmeter_plugins`
 
-Images of this repo on [docker hub](https://hub.docker.com/repository/docker/chiabre/jmeter_plugins)
-
-Repo of this images on [github](https://github.com/chiabre/jmeter_plugins)
+* Images of this repo on [docker hub](https://hub.docker.com/repository/docker/chiabre/jmeter_plugins)
+* Repo of this images on [github](https://github.com/chiabre/jmeter_plugins)
 
 ## Apache JMeter test execution
 
