@@ -1,5 +1,5 @@
 #!/bin/bash
-# Inspired from https://github.com/hhcordero/docker-jmeter-client and
+# Inspired by https://github.com/hhcordero/docker-jmeter-client and
 # https://github.com/justb4/docker-jmeter
 #
 # Basically runs jmeter, assuming the PATH is set to point to JMeter bin-dir (see Dockerfile)

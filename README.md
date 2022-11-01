@@ -21,7 +21,7 @@ The **version number** of this images is composed of two version numbers
 
 * The argumets provided to the Docker container are passed to the JMeter process 
 * Only JMeter default/embedded arguments are `-n` (non-GUI mode) and `-Dlog_level.jmeter` (log level)
-* Default log leve is set to `OFF`, it can be overridden using `JMETER_LOG_LEVEL` as env. variable (available log levels as per JMeter documentation are `DEBUG`, `INFO`, `WARN`, `ERROR` and `OFF`)
+* Default log leve is set to `INFO`, it can be overridden using `JMETER_LOG_LEVEL` as env. variable (available log levels as per JMeter documentation are `DEBUG`, `INFO`, `WARN`, `ERROR` and `OFF`)
 * The `-Jprometheus.ip=0.0.0.0` Prometheus Listener plugin argument is embedded in the image
 * JMeter jvm args can be set via `JVM_ARGS` env. varibale
 
@@ -52,8 +52,9 @@ Additional JMeter plugins can added mounting the in the following folder `/opt/a
 
 ### Supported tags
 
-* Apache JMeter 5.4.1 (openjdk 15)
-   * `latest`, `5.4.1-0.1.0`
+* Apache JMeter 5.5 (openjdk 11)
+   * `latest`, `5.5-0.1.1`
+   * `5.4.1-0.1.0`
 
 ## How to use this image
 
@@ -66,7 +67,7 @@ build.sh
 ### Run using
 
 ```console
-docker run --rm --name jmeter -i -v `pwd`:`\tmp` -w `\tmp` -p 9270:9270 chiabre/jmeter_plugins -t [YOUR_SCRIPT].jmx
+docker run --rm --name jmeter -i  -v "$(pwd)":/tmp -p 9270:9270 chiabre/jmeter_plugins:5.5-0.1.1 -t [YOUR_SCRIPT].jmx
 ```
 
 [YOUR_SCRIPT].jmx as to be present in the current path path, Additional JMeter or Promethues listern argument can be appended to the command.

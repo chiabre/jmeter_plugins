@@ -4,17 +4,17 @@
 # https://github.com/egaillardon/jmeter and
 # https://github.com/egaillardon/jmeter-plugins
 
-FROM alpine:3.12.4
+FROM alpine:3.16.2
 
 LABEL maintainer="luca.chiabrera@gmail.com"
 
-ARG JMETER_VERSION="5.4.1"
-ARG OPENJDK_VERSION="15"
+ARG JMETER_VERSION="5.5"
+ARG OPENJDK_VERSION="11"
 
-ENV JMETER_PLUGINS_MANAGER_VERSION="1.6"
-ENV CMDRUNNER_VERSION="2.2"
+ENV JMETER_PLUGINS_MANAGER_VERSION="1.8"
+ENV CMDRUNNER_VERSION="2.3"
 
-ENV JMETER_LOG_LEVEL="OFF"
+ENV JMETER_LOG_LEVEL="INFO"
 
 ENV MIRROR https://www-eu.apache.org/dist/jmeter/binaries
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
@@ -29,7 +29,8 @@ RUN apk update \
     curl \
     tzdata \
     bash \
- && apk --update add openjdk${OPENJDK_VERSION}-jre --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+ && apk --update add openjdk${OPENJDK_VERSION}-jre \
+ ## && apk --update add openjdk${OPENJDK_VERSION}-jre --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
  && rm -rf /var/cache/apk/* \
  && cd /tmp/ \
  && curl --location --silent --show-error --output apache-jmeter-${JMETER_VERSION}.tgz ${MIRROR}/apache-jmeter-${JMETER_VERSION}.tgz \
@@ -76,7 +77,7 @@ jmeter-prometheus\
 
 ENV PATH $PATH:$JMETER_BIN
 
-WORKDIR	/tmp/
+WORKDIR	/tmp
 
 COPY entrypoint.sh /
 
