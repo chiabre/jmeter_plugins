@@ -31,7 +31,7 @@ The image embeds the top 30ish most used plugins from [jmeter-plugins.org](https
 
 * [Custom Thread Groups](https://jmeter-plugins.org/?search=jpgc-casutg)
 * [PerfMon (Servers Performance Monitoring)](https://jmeter-plugins.org/?search=jpgc-perfmon)
-* [Dummy Sampler v0.4](https://jmeter-plugins.org/?search=jpgc-dummy)
+* [Dummy Sampler](https://jmeter-plugins.org/?search=jpgc-dummy)
 * [Throughput Shaping Timer](https://jmeter-plugins.org/?search=jpgc-tst)
 * [Custom JMeter Functions](https://jmeter-plugins.org/?search=jpgc-functions)
 * [Flexible File Writer](https://jmeter-plugins.org/?search=jpgc-ffw)
