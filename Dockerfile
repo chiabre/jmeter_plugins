@@ -4,19 +4,19 @@
 # https://github.com/egaillardon/jmeter and
 # https://github.com/egaillardon/jmeter-plugins
 
-FROM alpine:3.16.2
+FROM alpine:3.17.2
 
 LABEL maintainer="luca.chiabrera@gmail.com"
 
 ARG JMETER_VERSION="5.5"
 ARG OPENJDK_VERSION="11"
 
-ENV JMETER_PLUGINS_MANAGER_VERSION="1.8"
-ENV CMDRUNNER_VERSION="2.3"
+ARG JMETER_PLUGINS_MANAGER_VERSION="1.8"
+ARG CMDRUNNER_VERSION="2.3"
 
 ENV JMETER_LOG_LEVEL="INFO"
 
-ENV MIRROR https://www-eu.apache.org/dist/jmeter/binaries
+ENV MIRROR https://dlcdn.apache.org//jmeter/binaries/
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN ${JMETER_HOME}/bin
 ENV JMETER_LIB ${JMETER_HOME}/lib
@@ -30,16 +30,18 @@ RUN apk update \
     tzdata \
     bash \
  && apk --update add openjdk${OPENJDK_VERSION}-jre \
- ## && apk --update add openjdk${OPENJDK_VERSION}-jre --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
- && rm -rf /var/cache/apk/* \
- && cd /tmp/ \
+ && rm -rf /var/cache/apk/* 
+
+RUN cd /tmp/ \
  && curl --location --silent --show-error --output apache-jmeter-${JMETER_VERSION}.tgz ${MIRROR}/apache-jmeter-${JMETER_VERSION}.tgz \
- && curl --location --silent --show-error --output apache-jmeter-${JMETER_VERSION}.tgz.sha512 ${MIRROR}/apache-jmeter-${JMETER_VERSION}.tgz.sha512 \
+ && curl --location --silent --show-error --output apache-jmeter-${JMETER_VERSION}.tgz.sha512 https://www.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz.sha512 \
  && sha512sum -c apache-jmeter-${JMETER_VERSION}.tgz.sha512 \
  && mkdir -p /opt \
  && tar -xzf apache-jmeter-${JMETER_VERSION}.tgz -C /opt  \
- && rm -rf /tmp/* \
- && curl --location --silent --show-error --output ${JMETER_LIB}/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/${JMETER_PLUGINS_MANAGER_VERSION}/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar \ 
+ && rm -rf /tmp/* 
+
+
+ RUN curl --location --silent --show-error --output ${JMETER_LIB}/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/${JMETER_PLUGINS_MANAGER_VERSION}/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar \ 
  && curl --location --silent --show-error --output ${JMETER_LIB}/cmdrunner-${CMDRUNNER_VERSION}.jar http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/${CMDRUNNER_VERSION}/cmdrunner-${CMDRUNNER_VERSION}.jar \
  && java -cp ${JMETER_LIB}/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller \
  && chmod +x ${JMETER_BIN}/*.sh \
@@ -51,27 +53,28 @@ jpgc-dummy,\
 jpgc-tst,\
 jpgc-functions,\
 jpgc-ffw,\
-# jpgc-graphs-additional,\
 jpgc-fifo,\
+# jpgc-graphs-additional,\
 # jpgc-graphs-composite,\
-# jpgc-json,\
-jpgc-cmd,\
 # jpgc-synthesis,\
+# jpgc-cmd,\
 # jpgc-graphs-vs,\
-# jpgc-graphs-dist,\
-jpgc-prmctl,\
 # jpgc-mergeresults,\
-jpgc-csl,\
-# jpgc-ggl,\
-jpgc-csvars,\
 # jpgc-filterresults,\
-jpgc-sense,\
-jpgc-xml,\
+bzm-random-csv,\
 jpgc-wsc,\
+jpgc-csl,\
+# jpgc-graphs-dist,\
+# jpgc-json,\
+jpgc-prmctl,\
+bzm-parallel,\
+jpgc-sense,\
+jpgc-csvars,\
+# jpgc-ggl,\
+jpgc-xml,\
 jpgc-httpraw,\
 jpgc-autostop,\
-bzm-random-csv,\
-jmeter-prometheus\
+jmeter-prometheus \
  && ${JMETER_BIN}/jmeter --version \
  && ${JMETER_BIN}/PluginsManagerCMD.sh status
 
