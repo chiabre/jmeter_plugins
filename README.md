@@ -49,19 +49,32 @@ The image embeds the top 30ish most used plugins from [jmeter-plugins.org](https
 * [Auto-Stop Listener](https://jmeter-plugins.org/?search=jpgc-autostop)
 * [Prometheus Listener Plugin](https://jmeter-plugins.org/?search=jmeter-prometheus)
 
+Image tag `5.5-0.1.3` includes the following plugin versions:
+
+```console
+PluginsManagerCMD.sh status
+INFO o.j.r.PluginManagerCMD: Command is: status
+INFO o.j.r.JARSourceHTTP: Found cached repo
+INFO o.j.r.PluginManager: Plugins Status: [jpgc-autostop=0.2, jpgc-sense=3.5, jpgc-csl=0.1, jpgc-functions=2.2, jpgc-casutg=2.10, jpgc-dummy=0.4, jpgc-ffw=2.0, jpgc-httpraw=0.1, jpgc-fifo=0.2, bzm-parallel=0.11, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.8, jmeter-prometheus=0.6.0, bzm-random-csv=0.8, jpgc-tst=2.5, jpgc-csvars=0.1, jpgc-wsc=0.7, jpgc-xml=0.1, jmeter-core=5.6, jmeter-ftp=5.6, jmeter-http=5.6, jmeter-jdbc=5.6, jmeter-jms=5.6, jmeter-junit=5.6, jmeter-java=5.6, jmeter-ldap=5.6, jmeter-mail=5.6, jmeter-mongodb=5.6, jmeter-native=5.6, jmeter-tcp=5.6, jmeter-components=5.6]
+```
+
 Image tag `5.5-0.1.2` includes the following plugin versions:
 
 ```console
 PluginsManagerCMD.sh status
 INFO o.j.r.PluginManagerCMD: Command is: status
 INFO o.j.r.JARSourceHTTP: Found cached repo
-INFO o.j.r.PluginManager:  Plugins Status: [jpgc-autostop=0.1, jpgc-sense=3.5, jpgc-csl=0.1, jpgc-functions=2.2, jpgc-casutg=2.10, jpgc-dummy=0.4, jpgc-ffw=2.0, jpgc-httpraw=0.1, jpgc-fifo=0.2, bzm-parallel=0.11, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.8, jmeter-prometheus=0.6.0, bzm-random-csv=0.8, jpgc-tst=2.5, jpgc-csvars=0.1, jpgc-wsc=0.7, jpgc-xml=0.1, jmeter-core=5.5, jmeter-ftp=5.5, jmeter-http=5.5, jmeter-jdbc=5.5, jmeter-jms=5.5, jmeter-junit=5.5, jmeter-java=5.5, jmeter-ldap=5.5, jmeter-mail=5.5, jmeter-mongodb=5.5, jmeter-native=5.5, jmeter-tcp=5.5, jmeter-components=5.5]
+INFO o.j.r.PluginManager: Plugins Status: [jpgc-autostop=0.1, jpgc-sense=3.5, jpgc-csl=0.1, jpgc-functions=2.2, jpgc-casutg=2.10, jpgc-dummy=0.4, jpgc-ffw=2.0, jpgc-httpraw=0.1, jpgc-fifo=0.2, bzm-parallel=0.11, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.8, jmeter-prometheus=0.6.0, bzm-random-csv=0.8, jpgc-tst=2.5, jpgc-csvars=0.1, jpgc-wsc=0.7, jpgc-xml=0.1, jmeter-core=5.5, jmeter-ftp=5.5, jmeter-http=5.5, jmeter-jdbc=5.5, jmeter-jms=5.5, jmeter-junit=5.5, jmeter-java=5.5, jmeter-ldap=5.5, jmeter-mail=5.5, jmeter-mongodb=5.5, jmeter-native=5.5, jmeter-tcp=5.5, jmeter-components=5.5]
 ```
 
 Additional JMeter plugins can added mounting them in the following folder `/opt/apache-jmeter-${JMETER_VERSION}/lib/ext`
 
 ## Supported tags
 
+* Apache JMeter 5.6 (jdk17)
+   * `latest`, `5.6-0.1.3`
+* Apache JMeter 5.6 (jdk11)
+   * `5.6-0.1.2`
 * Apache JMeter 5.5
    * `latest`, `5.5-0.1.2`
    * `5.5-0.1.1`
