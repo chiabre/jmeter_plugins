@@ -49,7 +49,7 @@ The image embeds the top 30ish most used plugins from [jmeter-plugins.org](https
 * [Auto-Stop Listener](https://jmeter-plugins.org/?search=jpgc-autostop)
 * [Prometheus Listener Plugin](https://jmeter-plugins.org/?search=jmeter-prometheus)
 
-Image tag `5.5-0.1.3` includes the following plugin versions:
+Image tag `5.6-0.1.x` includes the following plugin versions:
 
 ```console
 PluginsManagerCMD.sh status
