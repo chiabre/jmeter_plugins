@@ -1,8 +1,8 @@
 #!/bin/bash
 
-JMETER_VERSION="5.5"
-OPENJDK_VERSION="11"
-IMG_VERSION="0.1.2"
+JMETER_VERSION="5.6"
+OPENJDK_VERSION="17"
+IMG_VERSION="0.1.3"
 
 # Example build line
 docker build --no-cache --progress=plain --network host --build-arg JMETER_VERSION=${JMETER_VERSION} --build-arg OPENJDK_VERSION=${OPENJDK_VERSION} -t "chiabre/jmeter_plugins:${JMETER_VERSION}-${IMG_VERSION}" .
