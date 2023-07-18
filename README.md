@@ -48,6 +48,7 @@ The image embeds the top 30ish most used plugins from [jmeter-plugins.org](https
 * [HTTP Raw Request](https://jmeter-plugins.org/?search=jpgc-httpraw)
 * [Auto-Stop Listener](https://jmeter-plugins.org/?search=jpgc-autostop)
 * [Prometheus Listener Plugin](https://jmeter-plugins.org/?search=jmeter-prometheus)
+* [Parameterized Controller](https://jmeter-plugins.org/?search=jpgc-prmctl)
 
 Image tag `5.5-0.1.3` includes the following plugin versions:
 
@@ -71,12 +72,13 @@ Additional JMeter plugins can added mounting them in the following folder `/opt/
 
 ## Supported tags
 
+* Apache JMeter 5.6.2 (jdk17)
+   * `latest`, `5.6.2-0.1.3`
 * Apache JMeter 5.6 (jdk17)
-   * `latest`, `5.6-0.1.3`
-* Apache JMeter 5.6 (jdk11)
+   * `5.6-0.1.3`, 
    * `5.6-0.1.2`
 * Apache JMeter 5.5
-   * `latest`, `5.5-0.1.2`
+   * `5.5-0.1.2`
    * `5.5-0.1.1`
 * Apache JMeter 5.4
    * `5.4.1-0.1.0`

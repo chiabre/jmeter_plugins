@@ -8,7 +8,7 @@ FROM alpine:3.18.2
 
 LABEL maintainer="luca.chiabrera@gmail.com"
 
-ARG JMETER_VERSION="5.6"
+ARG JMETER_VERSION="5.6.2"
 ARG OPENJDK_VERSION="17"
 
 ARG JMETER_PLUGINS_MANAGER_VERSION="1.9"
@@ -16,7 +16,7 @@ ARG CMDRUNNER_VERSION="2.3"
 
 ENV JMETER_LOG_LEVEL="INFO"
 
-ENV MIRROR https://dlcdn.apache.org//jmeter/binaries/
+ENV MIRROR https://dlcdn.apache.org//jmeter/binaries
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN ${JMETER_HOME}/bin
 ENV JMETER_LIB ${JMETER_HOME}/lib
