@@ -81,7 +81,7 @@ Additional JMeter plugins can added mounting them in the following folder `/opt/
 
 ## Supported tags
 
-* Apache JMeter 5.6.2 (jdk17)
+* Apache JMeter 5.6.3 (jdk17)
    * `latest`, `5.6.3-0.1.4`
 * Apache JMeter 5.6.2 (jdk17)
    * `5.6.2-0.1.3`
