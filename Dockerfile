@@ -4,14 +4,14 @@
 # https://github.com/egaillardon/jmeter and
 # https://github.com/egaillardon/jmeter-plugins
 
-FROM alpine:3.18.2
+FROM alpine:3.19.1
 
 LABEL maintainer="luca.chiabrera@gmail.com"
 
-ARG JMETER_VERSION="5.6.2"
+ARG JMETER_VERSION="5.6.3"
 ARG OPENJDK_VERSION="17"
 
-ARG JMETER_PLUGINS_MANAGER_VERSION="1.9"
+ARG JMETER_PLUGINS_MANAGER_VERSION="1.10"
 ARG CMDRUNNER_VERSION="2.3"
 
 ENV JMETER_LOG_LEVEL="INFO"

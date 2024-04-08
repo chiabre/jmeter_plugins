@@ -50,6 +50,15 @@ The image embeds the top 30ish most used plugins from [jmeter-plugins.org](https
 * [Prometheus Listener Plugin](https://jmeter-plugins.org/?search=jmeter-prometheus)
 * [Parameterized Controller](https://jmeter-plugins.org/?search=jpgc-prmctl)
 
+Image tag `5.6.3-0.1.x` includes the following plugin versions:
+
+```console
+PluginsManagerCMD.sh status
+INFO o.j.r.PluginManagerCMD: Command is: status
+INFO o.j.r.JARSourceHTTP: Found cached repo
+INFO o.j.r.PluginManager: Plugins Status: [jpgc-autostop=0.2, jpgc-sense=3.5, jpgc-csl=0.1, jpgc-functions=2.2, jpgc-casutg=2.10, jpgc-dummy=0.4, jpgc-ffw=2.0, jpgc-httpraw=0.1, jpgc-fifo=0.2, bzm-parallel=0.12, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.10, jmeter-prometheus=0.6.0, bzm-random-csv=0.8, jpgc-tst=2.6, jpgc-csvars=0.1, jpgc-wsc=0.7, jpgc-xml=0.1, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]
+```
+
 Image tag `5.6-0.1.x` includes the following plugin versions:
 
 ```console
@@ -73,7 +82,9 @@ Additional JMeter plugins can added mounting them in the following folder `/opt/
 ## Supported tags
 
 * Apache JMeter 5.6.2 (jdk17)
-   * `latest`, `5.6.2-0.1.3`
+   * `latest`, `5.6.3-0.1.4`
+* Apache JMeter 5.6.2 (jdk17)
+   * `5.6.2-0.1.3`
 * Apache JMeter 5.6 (jdk17)
    * `5.6-0.1.3`, 
    * `5.6-0.1.2`
